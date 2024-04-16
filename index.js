@@ -47,8 +47,6 @@ if (operationAns.operation === "withdraw amount") {
         }
         else {
             myBalance -= fastCashAns.fastCash;
-            // console.log(`${fastCashAns}withdraw successfully`);
-            // console.log(`"your remaining balance:" ${myBalance}`)
             console.log(chalk.black("withdraw successfully"));
         }
     }
@@ -60,12 +58,13 @@ if (operationAns.operation === "withdraw amount") {
                 message: "enter amount to withdraw",
             }
         ]);
-        if (amountAns.amount += myBalance) {
+        if (amountAns.amount > myBalance) {
             console.log(chalk.red("insufficient balance"));
+            console.log(`your remaining is ${myBalance}`);
         }
         else {
             myBalance -= amountAns.amount;
-            console.log("withdraw successfully");
+            console.log(chalk.yellow("withdraw successfully"));
         }
     }
 }
@@ -74,4 +73,3 @@ if (operationAns.operation === "check balanc") {
 else {
     console.log(`your remaining is ${myBalance}`);
 }
-console.log("your pin code is incorrect");

@@ -25,7 +25,7 @@ let pinAns = await inquirer.prompt(
 if(pinAns.pin === myPin){
     console.log("pin is correct ");
    }  else
-   {console.log(" your pin code is incorrect")
+   {console.log(" your pin code is incorrect");
 
     }
 
@@ -64,16 +64,14 @@ if(operationAns.operation === "withdraw amount"){
             ]
         );
         if(fastCashAns.fastCash> myBalance){
-            console.log("insuffishant balance")
+            console.log("insuffishant balance");
         }
         else{
             myBalance -= fastCashAns.fastCash
-            // console.log(`${fastCashAns}withdraw successfully`);
-            // console.log(`"your remaining balance:" ${myBalance}`)
-            console.log(chalk.black("withdraw successfully"))
+        
+            console.log(chalk.black("withdraw successfully"));
         }
-    }
-    else if(withdrawAns.withdrawMethod === "enter amount"){
+     } else if(withdrawAns.withdrawMethod === "enter amount"){
 
      let amountAns = await inquirer.prompt(
            [
@@ -84,15 +82,16 @@ if(operationAns.operation === "withdraw amount"){
              }
           ]
      );
-     if(amountAns.amount += myBalance){
-        console.log( chalk.red("insufficient balance"))
+     if(amountAns.amount > myBalance){
+        console.log( chalk.red("insufficient balance"));
+        console.log(`your remaining is ${myBalance}`)
      }else{
         myBalance -=  amountAns.amount 
-        console.log("withdraw successfully")
-     }
-     }
+         console.log(chalk.yellow("withdraw successfully"));
 
+      }   
      }
+      }
           if(operationAns.operation ==="check balanc"){
         
            } else{
@@ -101,5 +100,11 @@ if(operationAns.operation === "withdraw amount"){
           }
         
         
+          
+        
          
         
+
+
+
+
