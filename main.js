@@ -74,3 +74,4 @@ if (operationAns.operation === "check balanc") {
 else {
     console.log(`your remaining is ${myBalance}`);
 }
+console.log("your pin code is incorrect");
